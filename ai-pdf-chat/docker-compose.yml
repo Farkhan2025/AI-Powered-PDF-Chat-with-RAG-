@@ -1,0 +1,18 @@
+# Starts ChromaDB (the vector database) on http://localhost:8000
+#   docker compose up -d
+#
+# The version is pinned on purpose: this project uses Spring AI 1.0.0-M3, which talks to
+# the ChromaDB v1 REST API. Newer ChromaDB releases (1.x) removed that API.
+services:
+  chromadb:
+    image: chromadb/chroma:0.5.20
+    container_name: pdf-chat-chromadb
+    ports:
+      - "8000:8000"
+    environment:
+      - IS_PERSISTENT=TRUE
+    volumes:
+      - chroma-data:/chroma/chroma
+
+volumes:
+  chroma-data:
