@@ -1,0 +1,15 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Java / Maven
+target/
+
+# Local database
+data/
+
+# Node.js
+node_modules/
+
+# Environment files
+.env
